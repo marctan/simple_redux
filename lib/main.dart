@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_thunk/redux_thunk.dart';
-import 'package:simple_redux/domain/app_state.dart';
+import 'package:simple_redux/domain/action.dart';
+import 'package:simple_redux/domain/app_statebv.dart';
 import 'package:simple_redux/domain/middleware.dart';
 import 'package:simple_redux/domain/reducer.dart';
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   final store = Store<AppState>(
     reducer,
     initialState: AppState.initial(),
-    middleware: [thunkMiddleware],
+    middleware: [DemoMiddleWare()],
   );
 
   @override
@@ -40,24 +40,37 @@ class Home extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () => p.dispatch(
-          loginUser('marc', 'tan'),
-        ),
-      ),
-      body: StoreConnector<AppState, AppState>(
-        converter: (store) => store.state,
-        builder: (context, state) {
-          if (state.userState.isLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          return Center(
-            child: Text(
-              'Hello! ${state.userState.user.firstname}',
+        onPressed: () => p.dispatch(FetchItemAction((b) => b
+              ..firstname = 'marc'
+              ..lastname = 'tan')
+            // loginUser('marc', 'tan'),
             ),
-          );
-        },
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              // p.dispatch(reloginUser());
+            },
+            child: Text('reload'),
+          ),
+          StoreConnector<AppState, AppState>(
+            converter: (store) => store.state,
+            builder: (context, state) {
+              if (state.userState.isLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              return Center(
+                child: Text(
+                  'Hello! ${state.userState.user.firstname}',
+                ),
+              );
+            },
+          ),
+        ],
       ),
     );
   }

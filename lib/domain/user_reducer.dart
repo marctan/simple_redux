@@ -1,24 +1,38 @@
 import 'package:redux/redux.dart';
 import 'package:simple_redux/domain/action.dart';
-import 'package:simple_redux/domain/user_state.dart';
+import 'package:simple_redux/domain/user_statebv.dart';
 
 final userReducer = combineReducers<UserState>(
   [
     TypedReducer<UserState, LoginSuccessAction>(_loginSuccess),
     TypedReducer<UserState, LoginFailedAction>(_loginFailed),
     TypedReducer<UserState, StartLoadingAction>(_startLoading),
+    TypedReducer<UserState, FetchItemAction>(_testOnly),
   ],
 );
 
-
-UserState _loginSuccess (UserState state, LoginSuccessAction action) {
-  return state.copyWith(user: action.user, isLoading: false, loginError: false);
+UserState _loginSuccess(UserState state, LoginSuccessAction action) {
+  return state.rebuild((b) => b
+    ..user = action.user.toBuilder()
+    ..isLoading = false
+    ..loginError = false);
 }
 
-UserState _loginFailed (UserState state, LoginFailedAction action) {
-  return state.copyWith(user: null, isLoading: false, loginError: true);
+UserState _loginFailed(UserState state, LoginFailedAction action) {
+  return state.rebuild((b) => b
+    ..isLoading = false
+    ..loginError = false);
 }
 
-UserState _startLoading (UserState state, StartLoadingAction action) {
-  return state.copyWith(isLoading: true, loginError: false);
+UserState _startLoading(UserState state, StartLoadingAction action) {
+  return state.rebuild((b) => b
+    ..isLoading = true
+    ..loginError = false);
+}
+
+UserState _testOnly(UserState state, FetchItemAction action) {
+  return state.rebuild((b) => b
+    ..isLoading = true
+    ..loginError = false);
+  
 }
