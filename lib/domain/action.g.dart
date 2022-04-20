@@ -6,146 +6,148 @@ part of 'action.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$StartLoadingAction extends StartLoadingAction {
-  factory _$StartLoadingAction(
-          [void Function(StartLoadingActionBuilder)? updates]) =>
-      (new StartLoadingActionBuilder()..update(updates)).build();
+class _$FetchUserLoadingAction extends FetchUserLoadingAction {
+  factory _$FetchUserLoadingAction(
+          [void Function(FetchUserLoadingActionBuilder)? updates]) =>
+      (new FetchUserLoadingActionBuilder()..update(updates)).build();
 
-  _$StartLoadingAction._() : super._();
+  _$FetchUserLoadingAction._() : super._();
 
   @override
-  StartLoadingAction rebuild(
-          void Function(StartLoadingActionBuilder) updates) =>
+  FetchUserLoadingAction rebuild(
+          void Function(FetchUserLoadingActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  StartLoadingActionBuilder toBuilder() =>
-      new StartLoadingActionBuilder()..replace(this);
+  FetchUserLoadingActionBuilder toBuilder() =>
+      new FetchUserLoadingActionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is StartLoadingAction;
+    return other is FetchUserLoadingAction;
   }
 
   @override
   int get hashCode {
-    return 53042708;
+    return 632689642;
   }
 
   @override
   String toString() {
-    return newBuiltValueToStringHelper('StartLoadingAction').toString();
+    return newBuiltValueToStringHelper('FetchUserLoadingAction').toString();
   }
 }
 
-class StartLoadingActionBuilder
-    implements Builder<StartLoadingAction, StartLoadingActionBuilder> {
-  _$StartLoadingAction? _$v;
+class FetchUserLoadingActionBuilder
+    implements Builder<FetchUserLoadingAction, FetchUserLoadingActionBuilder> {
+  _$FetchUserLoadingAction? _$v;
 
-  StartLoadingActionBuilder();
+  FetchUserLoadingActionBuilder();
 
   @override
-  void replace(StartLoadingAction other) {
+  void replace(FetchUserLoadingAction other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$StartLoadingAction;
+    _$v = other as _$FetchUserLoadingAction;
   }
 
   @override
-  void update(void Function(StartLoadingActionBuilder)? updates) {
+  void update(void Function(FetchUserLoadingActionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$StartLoadingAction build() {
-    final _$result = _$v ?? new _$StartLoadingAction._();
+  _$FetchUserLoadingAction build() {
+    final _$result = _$v ?? new _$FetchUserLoadingAction._();
     replace(_$result);
     return _$result;
   }
 }
 
-class _$LoginFailedAction extends LoginFailedAction {
-  factory _$LoginFailedAction(
-          [void Function(LoginFailedActionBuilder)? updates]) =>
-      (new LoginFailedActionBuilder()..update(updates)).build();
+class _$FetchUserFailedAction extends FetchUserFailedAction {
+  factory _$FetchUserFailedAction(
+          [void Function(FetchUserFailedActionBuilder)? updates]) =>
+      (new FetchUserFailedActionBuilder()..update(updates)).build();
 
-  _$LoginFailedAction._() : super._();
+  _$FetchUserFailedAction._() : super._();
 
   @override
-  LoginFailedAction rebuild(void Function(LoginFailedActionBuilder) updates) =>
+  FetchUserFailedAction rebuild(
+          void Function(FetchUserFailedActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LoginFailedActionBuilder toBuilder() =>
-      new LoginFailedActionBuilder()..replace(this);
+  FetchUserFailedActionBuilder toBuilder() =>
+      new FetchUserFailedActionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LoginFailedAction;
+    return other is FetchUserFailedAction;
   }
 
   @override
   int get hashCode {
-    return 866752880;
+    return 588036496;
   }
 
   @override
   String toString() {
-    return newBuiltValueToStringHelper('LoginFailedAction').toString();
+    return newBuiltValueToStringHelper('FetchUserFailedAction').toString();
   }
 }
 
-class LoginFailedActionBuilder
-    implements Builder<LoginFailedAction, LoginFailedActionBuilder> {
-  _$LoginFailedAction? _$v;
+class FetchUserFailedActionBuilder
+    implements Builder<FetchUserFailedAction, FetchUserFailedActionBuilder> {
+  _$FetchUserFailedAction? _$v;
 
-  LoginFailedActionBuilder();
+  FetchUserFailedActionBuilder();
 
   @override
-  void replace(LoginFailedAction other) {
+  void replace(FetchUserFailedAction other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$LoginFailedAction;
+    _$v = other as _$FetchUserFailedAction;
   }
 
   @override
-  void update(void Function(LoginFailedActionBuilder)? updates) {
+  void update(void Function(FetchUserFailedActionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$LoginFailedAction build() {
-    final _$result = _$v ?? new _$LoginFailedAction._();
+  _$FetchUserFailedAction build() {
+    final _$result = _$v ?? new _$FetchUserFailedAction._();
     replace(_$result);
     return _$result;
   }
 }
 
-class _$LoginSuccessAction extends LoginSuccessAction {
+class _$FetchUserSuccessAction extends FetchUserSuccessAction {
   @override
   final BuiltUser user;
 
-  factory _$LoginSuccessAction(
-          [void Function(LoginSuccessActionBuilder)? updates]) =>
-      (new LoginSuccessActionBuilder()..update(updates)).build();
+  factory _$FetchUserSuccessAction(
+          [void Function(FetchUserSuccessActionBuilder)? updates]) =>
+      (new FetchUserSuccessActionBuilder()..update(updates)).build();
 
-  _$LoginSuccessAction._({required this.user}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(user, 'LoginSuccessAction', 'user');
+  _$FetchUserSuccessAction._({required this.user}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        user, 'FetchUserSuccessAction', 'user');
   }
 
   @override
-  LoginSuccessAction rebuild(
-          void Function(LoginSuccessActionBuilder) updates) =>
+  FetchUserSuccessAction rebuild(
+          void Function(FetchUserSuccessActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LoginSuccessActionBuilder toBuilder() =>
-      new LoginSuccessActionBuilder()..replace(this);
+  FetchUserSuccessActionBuilder toBuilder() =>
+      new FetchUserSuccessActionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LoginSuccessAction && user == other.user;
+    return other is FetchUserSuccessAction && user == other.user;
   }
 
   @override
@@ -155,23 +157,23 @@ class _$LoginSuccessAction extends LoginSuccessAction {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LoginSuccessAction')
+    return (newBuiltValueToStringHelper('FetchUserSuccessAction')
           ..add('user', user))
         .toString();
   }
 }
 
-class LoginSuccessActionBuilder
-    implements Builder<LoginSuccessAction, LoginSuccessActionBuilder> {
-  _$LoginSuccessAction? _$v;
+class FetchUserSuccessActionBuilder
+    implements Builder<FetchUserSuccessAction, FetchUserSuccessActionBuilder> {
+  _$FetchUserSuccessAction? _$v;
 
   BuiltUserBuilder? _user;
   BuiltUserBuilder get user => _$this._user ??= new BuiltUserBuilder();
   set user(BuiltUserBuilder? user) => _$this._user = user;
 
-  LoginSuccessActionBuilder();
+  FetchUserSuccessActionBuilder();
 
-  LoginSuccessActionBuilder get _$this {
+  FetchUserSuccessActionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _user = $v.user.toBuilder();
@@ -181,21 +183,21 @@ class LoginSuccessActionBuilder
   }
 
   @override
-  void replace(LoginSuccessAction other) {
+  void replace(FetchUserSuccessAction other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$LoginSuccessAction;
+    _$v = other as _$FetchUserSuccessAction;
   }
 
   @override
-  void update(void Function(LoginSuccessActionBuilder)? updates) {
+  void update(void Function(FetchUserSuccessActionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$LoginSuccessAction build() {
-    _$LoginSuccessAction _$result;
+  _$FetchUserSuccessAction build() {
+    _$FetchUserSuccessAction _$result;
     try {
-      _$result = _$v ?? new _$LoginSuccessAction._(user: user.build());
+      _$result = _$v ?? new _$FetchUserSuccessAction._(user: user.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -203,7 +205,7 @@ class LoginSuccessActionBuilder
         user.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'LoginSuccessAction', _$failedField, e.toString());
+            'FetchUserSuccessAction', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -212,35 +214,38 @@ class LoginSuccessActionBuilder
   }
 }
 
-class _$FetchItemAction extends FetchItemAction {
+class _$FetchUserMiddlewareAction extends FetchUserMiddlewareAction {
   @override
   final String firstname;
   @override
   final String lastname;
 
-  factory _$FetchItemAction([void Function(FetchItemActionBuilder)? updates]) =>
-      (new FetchItemActionBuilder()..update(updates)).build();
+  factory _$FetchUserMiddlewareAction(
+          [void Function(FetchUserMiddlewareActionBuilder)? updates]) =>
+      (new FetchUserMiddlewareActionBuilder()..update(updates)).build();
 
-  _$FetchItemAction._({required this.firstname, required this.lastname})
+  _$FetchUserMiddlewareAction._(
+      {required this.firstname, required this.lastname})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        firstname, 'FetchItemAction', 'firstname');
+        firstname, 'FetchUserMiddlewareAction', 'firstname');
     BuiltValueNullFieldError.checkNotNull(
-        lastname, 'FetchItemAction', 'lastname');
+        lastname, 'FetchUserMiddlewareAction', 'lastname');
   }
 
   @override
-  FetchItemAction rebuild(void Function(FetchItemActionBuilder) updates) =>
+  FetchUserMiddlewareAction rebuild(
+          void Function(FetchUserMiddlewareActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  FetchItemActionBuilder toBuilder() =>
-      new FetchItemActionBuilder()..replace(this);
+  FetchUserMiddlewareActionBuilder toBuilder() =>
+      new FetchUserMiddlewareActionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is FetchItemAction &&
+    return other is FetchUserMiddlewareAction &&
         firstname == other.firstname &&
         lastname == other.lastname;
   }
@@ -252,16 +257,17 @@ class _$FetchItemAction extends FetchItemAction {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('FetchItemAction')
+    return (newBuiltValueToStringHelper('FetchUserMiddlewareAction')
           ..add('firstname', firstname)
           ..add('lastname', lastname))
         .toString();
   }
 }
 
-class FetchItemActionBuilder
-    implements Builder<FetchItemAction, FetchItemActionBuilder> {
-  _$FetchItemAction? _$v;
+class FetchUserMiddlewareActionBuilder
+    implements
+        Builder<FetchUserMiddlewareAction, FetchUserMiddlewareActionBuilder> {
+  _$FetchUserMiddlewareAction? _$v;
 
   String? _firstname;
   String? get firstname => _$this._firstname;
@@ -271,9 +277,9 @@ class FetchItemActionBuilder
   String? get lastname => _$this._lastname;
   set lastname(String? lastname) => _$this._lastname = lastname;
 
-  FetchItemActionBuilder();
+  FetchUserMiddlewareActionBuilder();
 
-  FetchItemActionBuilder get _$this {
+  FetchUserMiddlewareActionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _firstname = $v.firstname;
@@ -284,24 +290,24 @@ class FetchItemActionBuilder
   }
 
   @override
-  void replace(FetchItemAction other) {
+  void replace(FetchUserMiddlewareAction other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$FetchItemAction;
+    _$v = other as _$FetchUserMiddlewareAction;
   }
 
   @override
-  void update(void Function(FetchItemActionBuilder)? updates) {
+  void update(void Function(FetchUserMiddlewareActionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$FetchItemAction build() {
+  _$FetchUserMiddlewareAction build() {
     final _$result = _$v ??
-        new _$FetchItemAction._(
+        new _$FetchUserMiddlewareAction._(
             firstname: BuiltValueNullFieldError.checkNotNull(
-                firstname, 'FetchItemAction', 'firstname'),
+                firstname, 'FetchUserMiddlewareAction', 'firstname'),
             lastname: BuiltValueNullFieldError.checkNotNull(
-                lastname, 'FetchItemAction', 'lastname'));
+                lastname, 'FetchUserMiddlewareAction', 'lastname'));
     replace(_$result);
     return _$result;
   }

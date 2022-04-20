@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
-import 'package:simple_redux/data/userbv.dart';
+import 'package:simple_redux/data/repo/user_repository.dart';
 import 'package:simple_redux/data/viewmodels/user_viewmodel.dart';
-import 'package:simple_redux/domain/action.dart';
 import 'package:simple_redux/domain/app_statebv.dart';
 import 'package:simple_redux/domain/middleware.dart';
 import 'package:simple_redux/domain/reducer.dart';
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
     middleware: [
       EpicMiddleware(
         combineEpics<AppState>([
-          DemoMiddleWare(),
+          DemoMiddleWare(UserRepository()),
         ]),
       )
     ],
@@ -50,7 +49,7 @@ class Home extends StatelessWidget {
       builder: (context, vm) {
         return Scaffold(
           floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.add),
+            child: const Icon(Icons.get_app_sharp),
             onPressed: () {
               vm.onFetchUser('marc', 'tan');
             },
@@ -58,12 +57,12 @@ class Home extends StatelessWidget {
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  // p.dispatch(reloginUser());
-                },
-                child: Text('reload'),
-              ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     // p.dispatch(reloginUser());
+              //   },
+              //   child: Text('reload'),
+              // ),
               Builder(
                 builder: (context) {
                   if (vm.isLoading) {

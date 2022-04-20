@@ -10,7 +10,7 @@ class _$UserState extends UserState {
   @override
   final bool isLoading;
   @override
-  final bool loginError;
+  final bool error;
   @override
   final BuiltUser user;
 
@@ -18,11 +18,10 @@ class _$UserState extends UserState {
       (new UserStateBuilder()..update(updates)).build();
 
   _$UserState._(
-      {required this.isLoading, required this.loginError, required this.user})
+      {required this.isLoading, required this.error, required this.user})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(isLoading, 'UserState', 'isLoading');
-    BuiltValueNullFieldError.checkNotNull(
-        loginError, 'UserState', 'loginError');
+    BuiltValueNullFieldError.checkNotNull(error, 'UserState', 'error');
     BuiltValueNullFieldError.checkNotNull(user, 'UserState', 'user');
   }
 
@@ -38,21 +37,21 @@ class _$UserState extends UserState {
     if (identical(other, this)) return true;
     return other is UserState &&
         isLoading == other.isLoading &&
-        loginError == other.loginError &&
+        error == other.error &&
         user == other.user;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc(0, isLoading.hashCode), loginError.hashCode), user.hashCode));
+    return $jf(
+        $jc($jc($jc(0, isLoading.hashCode), error.hashCode), user.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('UserState')
           ..add('isLoading', isLoading)
-          ..add('loginError', loginError)
+          ..add('error', error)
           ..add('user', user))
         .toString();
   }
@@ -65,9 +64,9 @@ class UserStateBuilder implements Builder<UserState, UserStateBuilder> {
   bool? get isLoading => _$this._isLoading;
   set isLoading(bool? isLoading) => _$this._isLoading = isLoading;
 
-  bool? _loginError;
-  bool? get loginError => _$this._loginError;
-  set loginError(bool? loginError) => _$this._loginError = loginError;
+  bool? _error;
+  bool? get error => _$this._error;
+  set error(bool? error) => _$this._error = error;
 
   BuiltUserBuilder? _user;
   BuiltUserBuilder get user => _$this._user ??= new BuiltUserBuilder();
@@ -79,7 +78,7 @@ class UserStateBuilder implements Builder<UserState, UserStateBuilder> {
     final $v = _$v;
     if ($v != null) {
       _isLoading = $v.isLoading;
-      _loginError = $v.loginError;
+      _error = $v.error;
       _user = $v.user.toBuilder();
       _$v = null;
     }
@@ -105,8 +104,8 @@ class UserStateBuilder implements Builder<UserState, UserStateBuilder> {
           new _$UserState._(
               isLoading: BuiltValueNullFieldError.checkNotNull(
                   isLoading, 'UserState', 'isLoading'),
-              loginError: BuiltValueNullFieldError.checkNotNull(
-                  loginError, 'UserState', 'loginError'),
+              error: BuiltValueNullFieldError.checkNotNull(
+                  error, 'UserState', 'error'),
               user: user.build());
     } catch (_) {
       late String _$failedField;

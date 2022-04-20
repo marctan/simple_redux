@@ -4,27 +4,27 @@ import 'package:simple_redux/domain/user_statebv.dart';
 
 final userReducer = combineReducers<UserState>(
   [
-    TypedReducer<UserState, LoginSuccessAction>(_loginSuccess),
-    TypedReducer<UserState, LoginFailedAction>(_loginFailed),
-    TypedReducer<UserState, StartLoadingAction>(_startLoading),
+    TypedReducer<UserState, FetchUserSuccessAction>(_fetchSuccess),
+    TypedReducer<UserState, FetchUserFailedAction>(_fetchFailed),
+    TypedReducer<UserState, FetchUserLoadingAction>(_startLoading),
   ],
 );
 
-UserState _loginSuccess(UserState state, LoginSuccessAction action) {
+UserState _fetchSuccess(UserState state, FetchUserSuccessAction action) {
   return state.rebuild((b) => b
     ..user = action.user.toBuilder()
     ..isLoading = false
-    ..loginError = false);
+    ..error = false);
 }
 
-UserState _loginFailed(UserState state, LoginFailedAction action) {
+UserState _fetchFailed(UserState state, FetchUserFailedAction action) {
   return state.rebuild((b) => b
     ..isLoading = false
-    ..loginError = false);
+    ..error = true);
 }
 
-UserState _startLoading(UserState state, StartLoadingAction action) {
+UserState _startLoading(UserState state, FetchUserLoadingAction action) {
   return state.rebuild((b) => b
     ..isLoading = true
-    ..loginError = false);
+    ..error = false);
 }

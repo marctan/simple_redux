@@ -1,6 +1,5 @@
 import 'package:built_value/built_value.dart';
 import 'package:redux/redux.dart';
-import 'package:simple_redux/data/userbv.dart';
 import 'package:simple_redux/domain/action.dart';
 import 'package:simple_redux/domain/app_statebv.dart';
 
@@ -17,7 +16,7 @@ abstract class UserViewModel
   factory UserViewModel.fromStore(Store<AppState> store) {
     return UserViewModel((b) => b
       ..onFetchUser = (firstname, lastname) {
-        store.dispatch(FetchItemAction((b) => b
+        store.dispatch(FetchUserMiddlewareAction((b) => b
           ..firstname = firstname
           ..lastname = lastname));
       }

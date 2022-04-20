@@ -1,64 +1,46 @@
-// import 'package:simple_redux/data/userbv.dart';
-
-// class StartLoadingAction {}
-
-// class LoginFailedAction {}
-
-// class LoginSuccessAction {
-//   final BuiltUser user;
-
-//   LoginSuccessAction(this.user);
-// }
-
-// class FetchItemAction {
-//   final String firstname;
-//   final String lastname;
-//   FetchItemAction(this.firstname, this.lastname);
-// }
-
 import 'package:built_value/built_value.dart';
-import 'package:simple_redux/data/userbv.dart';
+import 'package:simple_redux/data/model/userbv.dart';
 part 'action.g.dart';
 
 abstract class UserAction {}
 
-abstract class StartLoadingAction
+abstract class FetchUserLoadingAction
     implements
-        Built<StartLoadingAction, StartLoadingActionBuilder>,
+        Built<FetchUserLoadingAction, FetchUserLoadingActionBuilder>,
         UserAction {
-  StartLoadingAction._();
+  FetchUserLoadingAction._();
 
-  factory StartLoadingAction([Function(StartLoadingActionBuilder b) updates]) =
-      _$StartLoadingAction;
+  factory FetchUserLoadingAction([Function(FetchUserLoadingActionBuilder b) updates]) =
+      _$FetchUserLoadingAction;
 }
 
-abstract class LoginFailedAction
-    implements Built<LoginFailedAction, LoginFailedActionBuilder>, UserAction {
-  LoginFailedAction._();
+abstract class FetchUserFailedAction
+    implements Built<FetchUserFailedAction, FetchUserFailedActionBuilder>, UserAction {
+  FetchUserFailedAction._();
 
-  factory LoginFailedAction([Function(LoginFailedActionBuilder b) updates]) =
-      _$LoginFailedAction;
+  factory FetchUserFailedAction([Function(FetchUserFailedActionBuilder b) updates]) =
+      _$FetchUserFailedAction;
 }
 
-abstract class LoginSuccessAction
+abstract class FetchUserSuccessAction
     implements
-        Built<LoginSuccessAction, LoginSuccessActionBuilder>,
+        Built<FetchUserSuccessAction, FetchUserSuccessActionBuilder>,
         UserAction {
-  LoginSuccessAction._();
+  FetchUserSuccessAction._();
 
   BuiltUser get user;
 
-  factory LoginSuccessAction([Function(LoginSuccessActionBuilder b) updates]) =
-      _$LoginSuccessAction;
+  factory FetchUserSuccessAction([Function(FetchUserSuccessActionBuilder b) updates]) =
+      _$FetchUserSuccessAction;
 }
 
-abstract class FetchItemAction
-    implements Built<FetchItemAction, FetchItemActionBuilder>, UserAction {
-  FetchItemAction._();
+abstract class FetchUserMiddlewareAction
+    implements Built<FetchUserMiddlewareAction, FetchUserMiddlewareActionBuilder>, UserAction {
+  FetchUserMiddlewareAction._();
 
   String get firstname;
   String get lastname;
 
-  factory FetchItemAction([Function(FetchItemActionBuilder b) updates]) =
-      _$FetchItemAction;
+  factory FetchUserMiddlewareAction([Function(FetchUserMiddlewareActionBuilder b) updates]) =
+      _$FetchUserMiddlewareAction;
 }
