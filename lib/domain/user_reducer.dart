@@ -7,7 +7,6 @@ final userReducer = combineReducers<UserState>(
     TypedReducer<UserState, LoginSuccessAction>(_loginSuccess),
     TypedReducer<UserState, LoginFailedAction>(_loginFailed),
     TypedReducer<UserState, StartLoadingAction>(_startLoading),
-    TypedReducer<UserState, FetchItemAction>(_testOnly),
   ],
 );
 
@@ -28,11 +27,4 @@ UserState _startLoading(UserState state, StartLoadingAction action) {
   return state.rebuild((b) => b
     ..isLoading = true
     ..loginError = false);
-}
-
-UserState _testOnly(UserState state, FetchItemAction action) {
-  return state.rebuild((b) => b
-    ..isLoading = true
-    ..loginError = false);
-  
 }
